@@ -1,0 +1,197 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}
+
+@*@model Book.Models.RegisterViewModel*@
+
+@*<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Register</h2>
+                        <form method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Username</label>
+                                <input asp-for="Username" class="form-control" required>
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input asp-for="Email" class="form-control" required>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input asp-for="Password" type="password" class="form-control" required>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<div class="container-fluid padd-tb">
+    <div class="card">
+        <div class="fix--height row g-0">
+            <div class="p-3 bg-right  col-md-7" id="loginContent">
+                <div class="">
+                    <div class="">
+                        <h2 class="text-center mb-4">Signin</h2>
+                        <form method="post" id="loginForm" class="m-5">
+                            <div class="mb-3">
+                                <h6>Username</h6>
+                                <input class="form-control" name="Lusername">
+                                <span class="text-danger" id="usernameLError"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <h6>Password</h6>
+                                <input type="password" class="form-control" name="Lpassword">
+                                <span class="text-danger" id="passwordLError"></span>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark">Signin</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 text-white bg-left p-3 bg-gray  col-md-4 d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                    <h1>Hi there</h1>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark" id="signinButton">Signin</button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-right  col-md-7" id="registrationContent" >
+                <div class="">
+                    <div class="">
+                        <h2 class="text-center mb-4">Register</h2>
+                        <form method="post" id="registrationForm" class="m-5">
+                            <div class="mb-3">
+                                <h6>Username</h6>
+                                <input class="form-control" name="username">
+                                <span class="text-danger" id="usernameError"></span>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Email</h6>
+                                <input class="form-control" name="email">
+                                <span class="text-danger" id="emailError"></span>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Password</h6>
+                                <input type="password" class="form-control" name="password">
+                                <span class="text-danger" id="passwordError"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <h6>Confirm Password</h6>
+                                <input type="password" class="form-control" name="c-password">
+                                <span class="text-danger" id="c-passwordError"></span>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        //document.getElementById("signinButton").addEventListener("click", function () {
+        //    var loginContainer = document.getElementById("loginContent");
+        //    loginContainer.style.display = (loginContainer.style.display === "none") ? "block" : "none";
+
+        //    var registrationContent = document.getElementById("registrationContent");
+        //    registrationContent.style.display = (registrationContent.style.display === "block") ? "none" : "block";
+
+        //    var signinButton = document.getElementById("signinButton");
+        //    signinButton.innerHTML = (loginContainer.style.display === "none") ? "Login" : "Register";
+        //});
+
+        document.getElementById("signinButton").addEventListener("click", function () {
+            var loginContainer = document.getElementById("loginContent");
+            var registrationContent = document.getElementById("registrationContent");
+
+            loginContainer.classList.toggle("show");
+            registrationContent.classList.toggle("hide");
+
+            var signinButton = document.getElementById("signinButton");
+            signinButton.textContent = (loginContainer.classList.contains("show")) ? "Register" : "Login";
+        });
+
+        $(document).ready(function () {
+            $("#registrationForm").submit(function (event) {
+                var username = $("input[name='username']").val();
+                if (!username) {
+                    $("#usernameError").text("Username is required.");
+                    event.preventDefault();
+                }
+                else if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
+                    $("#usernameError").text("Username must start with alphabets only.");
+                    event.preventDefault();
+                } else {
+                    $("#usernameError").text("");
+                }
+
+                var email = $("input[name='email']").val();
+                if (!email) {
+                    $("#emailError").text("Email is required.");
+                    event.preventDefault();
+                }
+                else if (!isValidEmail(email)) {
+                    $("#emailError").text("Enter a valid email address.");
+                    event.preventDefault();
+                } else {
+                    $("#emailError").text("");
+                }
+
+                var password = $("input[name='password']").val();
+                if (!password) {
+                    $("#passwordError").text("Password is required.");
+                    event.preventDefault();
+                }
+                else if (password.length < 8) {
+                    $("#passwordError").text("Password must be at least 8 characters long.");
+                    event.preventDefault();
+                } else {
+                    $("#passwordError").text("");
+                }
+
+                var c_password = $("input[name='c-password']").val();
+                if (!c_password) {
+                    $("#c-passwordError").text("Confirm password is required.");
+                    event.preventDefault();
+                }
+                else if (c_password.length < 8) {
+                    $("#c-passwordError").text("Password must be at least 8 characters long.");
+                    event.preventDefault();
+                }
+                else if (password !== c_password) {
+                    $("#c-passwordError").text("Password and Confirm password is not match.");
+                    event.preventDefault();
+                }
+                else {
+                    $("#c-passwordError").text("");
+                }
+            });
+
+            function isValidEmail(email) {
+                var emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+                return emailRegex.test(email);
+            }
+        });</script>

@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+@*@model Book.Models.LoginViewModel*@
+
+@*<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Login</h2>
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input asp-for="Username" class="form-control" required>
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" required>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+<div class="container-fluid padd-tb">
+    <div class="card">
+        <div class="row g-0">
+            <div class="p-3 bg-right  col-md-7">
+                <div class="">
+                    <div class="">
+                        <h2 class="text-center mb-4">Register</h2>
+                        <form method="post" id="registrationForm" class="m-4">
+                            <div class="mb-3">
+                                <h6>Username</h6>
+                                <input class="form-control" name="username">
+                                <span class="text-danger" id="usernameError"></span>
+                            </div>
+                           
+                            <div class="mb-3">
+                                <h6>Password</h6>
+                                <input type="password" class="form-control" name="password">
+                                <span class="text-danger" id="passwordError"></span>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark">Signin</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 text-white bg-left p-3 bg-gray  col-md-4 d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                    <h1>Hi there</h1>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Signin</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

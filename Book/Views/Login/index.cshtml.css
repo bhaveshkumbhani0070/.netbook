@@ -1,0 +1,14 @@
+﻿.padd-tb {
+    padding: 4.8rem 0 4.8rem;
+}
+
+.bg-right {
+    background-color: #4d9df3;
+    background-image: linear-gradient(to right bottom, #4d9df3, #a9d2ff);
+}
+
+.bg-left {
+    background-image: linear-gradient( to right bottom, rgb(13 110 253 / 48%), rgb(13 110 253 / 32%) ), url('../img/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+}
