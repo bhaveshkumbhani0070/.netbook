@@ -50,13 +50,13 @@
                         <form method="post" id="loginForm" class="m-5">
                             <div class="mb-3">
                                 <h6>Username</h6>
-                                <input class="form-control" name="Lusername" id="username">
+                                <input class="form-control" name="Lusername" id="Lusername">
                                 <span class="text-danger" id="usernameLError"></span>
                             </div>
 
                             <div class="mb-3">
                                 <h6>Password</h6>
-                                <input type="password" class="form-control" name="Lpassword" id="password">
+                                <input type="password" class="form-control" name="Lpassword" id="Lpassword">
                                 <span class="text-danger" id="passwordLError"></span>
                             </div>
                             <div class="d-grid">
@@ -83,23 +83,23 @@
                         <form method="post" id="registrationForm" class="m-5">
                             <div class="mb-3">
                                 <h6>Username</h6>
-                                <input class="form-control" name="username">
+                                <input class="form-control" name="username" id="username" required>
                                 <span class="text-danger" id="usernameError"></span>
                             </div>
                             <div class="mb-3">
                                 <h6>Email</h6>
-                                <input class="form-control" name="email">
+                                <input class="form-control" name="email" id="email" required>
                                 <span class="text-danger" id="emailError"></span>
                             </div>
                             <div class="mb-3">
                                 <h6>Password</h6>
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" id="password" required>
                                 <span class="text-danger" id="passwordError"></span>
                             </div>
 
                             <div class="mb-3">
                                 <h6>Confirm Password</h6>
-                                <input type="password" class="form-control" name="c-password">
+                                <input type="password" class="form-control" name="c-password" id="c-password" required>
                                 <span class="text-danger" id="c-passwordError"></span>
                             </div>
                             <div class="d-grid">
@@ -114,115 +114,177 @@
 </div>
 
 
-
     <script>
-        //document.getElementById("signinButton").addEventListener("click", function () {
-        //    var loginContainer = document.getElementById("loginContent");
-        //    loginContainer.style.display = (loginContainer.style.display === "none") ? "block" : "none";
-
-        //    var registrationContent = document.getElementById("registrationContent");
-        //    registrationContent.style.display = (registrationContent.style.display === "block") ? "none" : "block";
-
-        //    var signinButton = document.getElementById("signinButton");
-        //    signinButton.innerHTML = (loginContainer.style.display === "none") ? "Login" : "Register";
-        //});
-
-        document.getElementById("signinButton").addEventListener("click", function () {
-            var loginContainer = document.getElementById("loginContent");
-            var registrationContent = document.getElementById("registrationContent");
-
-            loginContainer.classList.toggle("show");
-            registrationContent.classList.toggle("hide");
-
-            var signinButton = document.getElementById("signinButton");
-            signinButton.textContent = (loginContainer.classList.contains("show")) ? "Register" : "Login";
+    $(document).ready(function () {
+        $("#registrationForm").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 3 
+                },
+                email: {
+                    required: true,
+                    email: true 
+                },
+                password: {
+                    required: true,
+                    minlength: 6 
+                },
+                "c-password": {
+                    required: true,
+                    equalTo: "#password" 
+                }
+            },
+            messages: {
+                username: {
+                    required: "Please enter a username",
+                    minlength: "Username must be at least 3 characters long"
+                },
+                email: {
+                    required: "Please enter your email address",
+                    email: "Please enter a valid email address"
+                },
+                password: {
+                    required: "Please enter a password",
+                    minlength: "Password must be at least 6 characters long"
+                },
+                "c-password": {
+                    required: "Please confirm your password",
+                    equalTo: "Passwords do not match"
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo('#' + element.attr('id') + 'Error');
+            }
         });
 
-        $(document).ready(function () {
-            $("#registrationForm").submit(function (event) {
-                var username = $("input[name='username']").val();
-                if (!username) {
-                    $("#usernameError").text("Username is required.");
-                    event.preventDefault();
+        $("#loginForm").validate({
+            rules: {
+                Lusername: {
+                    required: true,
+                    minlength:3
+                },
+                Lpassword: {
+                    required: true,
+                    minlength: 6
                 }
-                else if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
-                    $("#usernameError").text("Username must start with alphabets only.");
-                    event.preventDefault();
-                } else {
-                    $("#usernameError").text("");
+            },
+            messages: {
+                Lusername: {
+                    required: "Please enter a username",
+                    minlength: "Username must be at least 3 characters long"
+                },
+                Lpassword: {
+                    required: "Please enter a password",
+                    minlength: "Password must be at least 6 characters long"
                 }
-
-                var email = $("input[name='email']").val();
-                if (!email) {
-                    $("#emailError").text("Email is required.");
-                    event.preventDefault();
-                }
-                else if (!isValidEmail(email)) {
-                    $("#emailError").text("Enter a valid email address.");
-                    event.preventDefault();
-                } else {
-                    $("#emailError").text("");
-                }
-
-                var password = $("input[name='password']").val();
-                if (!password) {
-                    $("#passwordError").text("Password is required.");
-                    event.preventDefault();
-                }
-                else if (password.length < 8) {
-                    $("#passwordError").text("Password must be at least 8 characters long.");
-                    event.preventDefault();
-                } else {
-                    $("#passwordError").text("");
-                }
-
-                var c_password = $("input[name='c-password']").val();
-                if (!c_password) {
-                    $("#c-passwordError").text("Confirm password is required.");
-                    event.preventDefault();
-                }
-                else if (c_password.length < 8) {
-                    $("#c-passwordError").text("Password must be at least 8 characters long.");
-                    event.preventDefault();
-                }
-                else if (password !== c_password) {
-                    $("#c-passwordError").text("Password and Confirm password is not match.");
-                    event.preventDefault();
-                }
-                else {
-                    $("#c-passwordError").text("");
-                }
-            });
-
-            function isValidEmail(email) {
-                var emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
-                return emailRegex.test(email);
             }
+        })
+    });
+    </script>
 
-            $("#loginForm").submit(function (event) {
-                var username = $("#username").val();
-                var password = $("#password").val();
+    <script>
+        document.getElementById("signinButton").addEventListener("click", function () {
+            var loginContainer = document.getElementById("loginContent");
+        var registrationContent = document.getElementById("registrationContent");
 
-                if (!username) {
-                    $("#usernameLError").text("Username is required.");
-                    event.preventDefault();
-                }
-                else if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
-                    $("#usernameLError").text("Username must start with alphabets only.");
-                    event.preventDefault();
-                } else {
-                    $("#usernameLError").text("");
-                }
+        loginContainer.classList.toggle("show");
+        registrationContent.classList.toggle("hide");
 
-                if (!password) {
-                    $("#passwordLError").text("Password is required.");
-                    event.preventDefault();
-                }
-                else if (password.length < 8) {
-                    $("#passwordLError").text("Password must be at least 8 characters long.");
-                    event.preventDefault();
-                } else {
-                    $("#passwordLError").text("");
-                }
-            })
-        });</script>
+        var signinButton = document.getElementById("signinButton");
+        signinButton.textContent = (loginContainer.classList.contains("show")) ? "Register" : "Login";
+        });
+
+
+        //$(document).ready(function () {
+
+           
+
+            //$("#registrationForm").submit(function (event) {
+            //    var username = $("input[name='username']").val();
+            //    if (!username) {
+            //        $("#usernameError").text("Username is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
+            //        $("#usernameError").text("Username must start with alphabets only.");
+            //        event.preventDefault();
+            //    } else {
+            //        $("#usernameError").text("");
+            //    }
+
+            //    var email = $("input[name='email']").val();
+            //    if (!email) {
+            //        $("#emailError").text("Email is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (!isValidEmail(email)) {
+            //        $("#emailError").text("Enter a valid email address.");
+            //        event.preventDefault();
+            //    } else {
+            //        $("#emailError").text("");
+            //    }
+
+            //    var password = $("input[name='password']").val();
+            //    if (!password) {
+            //        $("#passwordError").text("Password is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (password.length < 8) {
+            //        $("#passwordError").text("Password must be at least 8 characters long.");
+            //        event.preventDefault();
+            //    } else {
+            //        $("#passwordError").text("");
+            //    }
+
+            //    var c_password = $("input[name='c-password']").val();
+            //    if (!c_password) {
+            //        $("#c-passwordError").text("Confirm password is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (c_password.length < 8) {
+            //        $("#c-passwordError").text("Password must be at least 8 characters long.");
+            //        event.preventDefault();
+            //    }
+            //    else if (password !== c_password) {
+            //        $("#c-passwordError").text("Password and Confirm password is not match.");
+            //        event.preventDefault();
+            //    }
+            //    else {
+            //        $("#c-passwordError").text("");
+            //    }
+            //});
+
+            //function isValidEmail(email) {
+            //    var emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+            //    return emailRegex.test(email);
+            //}
+
+            //$("#loginForm").submit(function (event) {
+            //    var username = $("#username").val();
+            //    var password = $("#password").val();
+
+            //    if (!username) {
+            //        $("#usernameLError").text("Username is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
+            //        $("#usernameLError").text("Username must start with alphabets only.");
+            //        event.preventDefault();
+            //    } else {
+            //        $("#usernameLError").text("");
+            //    }
+
+            //    if (!password) {
+            //        $("#passwordLError").text("Password is required.");
+            //        event.preventDefault();
+            //    }
+            //    else if (password.length < 8) {
+            //        $("#passwordLError").text("Password must be at least 8 characters long.");
+            //        event.preventDefault();
+            //    } else {
+            //        $("#passwordLError").text("");
+            //    }
+            //})
+        //});
+    </script>
