@@ -51,13 +51,13 @@
                             <div class="mb-3">
                                 <h6>Username</h6>
                                 <input class="form-control" name="Lusername" id="Lusername">
-                                <span class="text-danger" id="usernameLError"></span>
+                                <span class="text-danger" id="LusernameError"></span>
                             </div>
 
                             <div class="mb-3">
                                 <h6>Password</h6>
                                 <input type="password" class="form-control" name="Lpassword" id="Lpassword">
-                                <span class="text-danger" id="passwordLError"></span>
+                                <span class="text-danger" id="LpasswordError"></span>
                             </div>
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-dark">Signin</button>
@@ -178,6 +178,9 @@
                     required: "Please enter a password",
                     minlength: "Password must be at least 6 characters long"
                 }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo('#' + element.attr('id') + 'Error');
             }
         })
     });
