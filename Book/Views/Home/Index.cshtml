@@ -4,6 +4,814 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p> <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+
+<div id="avatar-container">
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Date Picker</h2>
+    <div>
+        <div class="k-d-flex k-flex-1 k-flex-col k-px-8 k-pt-7">
+            <div class="kd-header k-d-flex k-gap-8 k-mb-6 k-justify-content-stretch">
+                <div class="kd-header-core k-d-flex k-flex-col">
+                    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Schedule Your Visit</h2>
+                    <span class="k-d-inline-block">Select Appointment Date</span>
+                    <input id="datepicker" />
+                    <div class="k-w-24 k-h-4 k-mt-5 k-skeleton k-opacity-40 k-rounded-md"></div>
+                    <div class="k-w-full k-h-8 k-mt-1.5 k-mb-auto k-skeleton k-opacity-30 k-rounded-md"></div>
+                    <div class="kd-actions k-d-flex k-mt-5 k-justify-content-end">
+                        <div class="k-w-20 k-h-8 k-skeleton k-opacity-40 k-rounded-md"></div>
+                        <div class="k-w-20 k-h-8 k-ml-4 k-skeleton k-opacity-50 k-rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="kd-content k-mt-2 k-grow k-skeleton k-opacity-30 k-rounded-tl-md k-rounded-tr-md"></div>
+        </div>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Color Picker</h2>
+    <div class="k-d-flex k-flex-col k-gap-1">
+        <div class="k-d-flex k-gap-5">
+            <input id="picker" />
+        </div>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Checkbox</h2>
+    <div class="demo-section">
+        <h4>Choose Extra Equipment</h4>
+        <ul class="fieldlist">
+            <li>
+                <input type="checkbox" id="eq1" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq2" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq3" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq4" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq5" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq6" />
+            </li>
+            <li>
+                <input type="checkbox" id="eq7" />
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Radio Button</h2>
+    <div class="demo-section">
+        <h4>Select Car Engine</h4>
+        <ul class="fieldlist">
+            <li>
+                <input type="radio" name="engine" id="engine1" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine2" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine3" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine4" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine5" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine6" />
+            </li>
+            <li>
+                <input type="radio" name="engine" id="engine7" />
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Drop Down</h2>
+    <div class="k-d-flex k-flex-1 k-flex-col k-px-8 k-pt-7">
+        <div class="kd-header k-d-flex k-gap-8 k-mb-6 k-justify-content-stretch">
+            <div class="kd-header-core k-d-flex k-flex-col">
+                <input id="kd-place-chooser" />
+                <div class="k-w-24 k-h-4 k-mt-5 k-skeleton k-opacity-40 k-rounded-md"></div>
+                <div class="k-w-full k-h-8 k-mt-1.5 k-mb-auto k-skeleton k-opacity-30 k-rounded-md"></div>
+                <div class="kd-actions k-d-flex k-mt-5 k-justify-content-end">
+                    <div class="k-w-20 k-h-8 k-skeleton k-opacity-40 k-rounded-md"></div>
+                    <div class="k-w-20 k-h-8 k-ml-4 k-skeleton k-opacity-50 k-rounded-md"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Text Area</h2>
+    <div class="demo-wrapper k-d-grid k-gap-8 k-flex-1 k-px-8 k-pt-7">
+        <div class="main-container k-pb-8 k-d-flex k-flex-col">
+            <span class="k-d-inline-block">About me</span>
+            <textarea id="textarea" required data-required-msg="Please enter a text." data-max-msg="Enter value between 1 and 200"></textarea>
+        </div>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Dropdown Tree</h2>
+
+    <div class="k-d-flex k-flex-1 k-flex-col k-px-8 k-pt-7">
+        <div class="kd-header k-d-flex k-gap-8 k-mb-6 k-justify-content-stretch">
+            <div class="kd-header-core k-d-flex k-flex-col">
+                <span class="k-d-inline-block">Find restaurants in your area</span>
+                <input id="kd-place-chooser" />
+            </div>
+        </div>
+    </div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">List View</h2>
+    <div id="treelist"></div>
+
+    <h2 class="k-h4 k-mt-0 k-mb-4 k-opacity-30">Grid</h2>
+    <div id="grid"></div>
+
+    <p> Avatar</p>
+    <div class="user-data-container">
+        <div class="k-hbox">
+            <div id="avatar-text" class="avatar-margin-right-5"></div>
+            <div style="margin-left: 10px">
+                <h2 class="contact-name">Jason Smith</h2>
+                <p class="contact-position">UX Desiner</p>
+            </div>
+        </div>
+        <div class="k-hbox">
+            <div id="avatar-text-second" class="avatar-margin-right-5"></div>
+            <div class="avatar-margin-left-10">
+                <h2 class="contact-name">George Porter</h2>
+                <p class="contact-position">Software Engineer</p>
+            </div>
+        </div>
+    </div>
+    <div class="user-data-container k-hbox">
+        <div id="avatar-image-first" class="avatar-margin-right-5"></div>
+        <div class="avatar-margin-left-10">
+            <h2 class="contact-name">Michael Holz</h2>
+            <p class="contact-position">Manager</p>
+        </div>
+        <div id="avatar-image-second" class="avatar-margin-right-5"></div>
+        <div class="avatar-margin-left-10">
+            <h2 class="contact-name">Andre Steward</h2>
+            <p class="contact-position">Product Manager</p>
+        </div>
+    </div>
+    <div class="user-data-container k-hbox">
+        <div id="avatar-icon" class="avatar-margin-right-5"></div>
+        <div class="avatar-margin-left-10">
+            <h2 class="contact-name">Unknown</h2>
+            <p class="contact-position">Not Specified</p>
+        </div>
+    </div>
+
+    <p> Buttons</p>
+    <div>
+        <div>
+            <h4>Basic Button</h4>
+            <p>
+                <button id="primaryTextButton">Primary Button</button>
+                <button id="textButton">Button</button>
+            </p>
+        </div>
+
+        <div>
+            <h4>Disabled buttons</h4>
+            <p>
+                <a id="primaryDisabledButton">Disabled Primary Button</a>
+                <a id="disabledButton">Disabled Button</a>
+            </p>
+        </div>
+
+        <div>
+            <h4>Buttons with icons</h4>
+            <p>
+                <a id="iconTextButton">Filter</a>
+                <a id="kendoIconTextButton">Clear Filter</a>
+                <em id="iconButton"></em>
+            </p>
+        </div>
+    </div>
+
+    <p>Calendar</p>
+    <div>
+
+        <div id="calendar"></div>
+    </div>
+
+
+
+
+    <p>Card</p>
+    <div class="k-card">
+        <div class="k-card-header">
+            <h5 class="k-card-title">Rome</h5>
+            <h6 class="k-card-subtitle">Capital of Italy</h6>
+        </div>
+        <div class="k-card-body">
+            <p>Rome is a sprawling, cosmopolitan city with nearly 3,000 years of globally influential art, architecture and culture on display.</p>
+            <p>Ancient ruins such as the Forum and the Colosseum evoke the power of the former Roman Empire. </p>
+        </div>
+        <div class="k-card-footer">
+            <a class="k-button k-button-flat-base k-button-flat k-button-md k-rounded-md k-icon-button"><span class="k-button-icon facebook"></span></a>
+            <a class="k-button k-button-flat-base k-button-flat k-button-md k-rounded-md k-icon-button"><span class="k-button-icon pinterest"></span></a>
+            <a class="k-button k-button-flat-base k-button-flat k-button-md k-rounded-md k-icon-button"><span class="k-button-icon twitter"></span></a>
+        </div>
+        <div class="k-card-actions k-card-actions-stretched">
+            <span class="k-card-action"><span class="k-button k-button-flat-primary k-button-flat k-button-md k-rounded-md">Map</span></span>
+            <span class="k-card-action"><span class="k-button k-button-flat-primary k-button-flat k-button-md k-rounded-md">Weather</span></span>
+        </div>
+    </div>
+
+    @*<p>Dialog</p>
+        <div id="example">
+            <div id="dialog">
+            </div>
+            <span id="undo" style="display:none" class="k-button k-button-solid-base k-button-solid k-button-md k-rounded-md hide-on-narrow">Click here to open the dialog</span>
+        </div>*@
+
+    <p>Pie chart</p>
+    <div>
+        <div id="chart" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        //datepicker
+        $("#datepicker").kendoDatePicker({
+            dateInput: true
+        });
+
+        //Color Picker
+
+        let kendokaSvg;
+        // fetch SVG and append to container
+        fetch("https://demos.telerik.com/kendo-ui/content/web/kendoka/kendoka.svg")
+            .then(r => r.text())
+            .then(text => {
+                $(".kendoka").append(text);
+
+                kendokaSvg = $("#kendoka-svg");
+                // remove the absolute position.
+                kendokaSvg.removeClass("k-pos-absolute");
+            });
+
+        function preview(e) {
+            var selectedColor = e.value;
+            $(kendokaSvg).find(".kendoka-armour").each(function (i, el) {
+                $(el).attr('fill', selectedColor);
+            })
+        }
+
+        $("#picker").kendoColorPicker({
+            input: false,
+            preview: false,
+            value: "#E26841",
+            buttons: false,
+            select: preview,
+            views: ["gradient"]
+        });
+
+        //Checkbox
+
+        $('#eq1').kendoCheckBox({
+            checked: true,
+            label: "Rear side airbags"
+        });
+
+        $('#eq2').kendoCheckBox({
+            checked: true,
+            label: "Leather trim",
+            enabled: false
+        });
+
+        $('#eq3').kendoCheckBox({
+            label: "Luggage compartment cover"
+        });
+
+        $('#eq4').kendoCheckBox({
+            label: "Heated front and rear seats"
+        });
+
+        $('#eq5').kendoCheckBox({
+            label: "Dual-zone air conditioning"
+        });
+
+        $('#eq6').kendoCheckBox({
+            label: "Rain sensor"
+        });
+
+        $('#eq7').kendoCheckBox({
+            label: "Towbar preparation",
+            enabled: false
+        });
+
+        //Radio Button
+
+        $('#engine1').kendoRadioButton({
+            label: "1.4 Petrol, 92kW",
+            checked: true
+        })
+        $('#engine2').kendoRadioButton({
+            label: "1.8 Petrol, 118kW"
+        })
+        $('#engine3').kendoRadioButton({
+            label: "2.0 Petrol, 147kW"
+        })
+        $('#engine4').kendoRadioButton({
+            label: "3.6 Petrol, 191kW",
+            enabled: false
+        })
+        $('#engine5').kendoRadioButton({
+            label: "1.6 Diesel, 77kW"
+        })
+        $('#engine6').kendoRadioButton({
+            label: "2.0 Diesel, 103kW"
+        })
+        $('#engine7').kendoRadioButton({
+            label: "2.0 Petrol, 125kW",
+            enabled: false
+        })
+
+
+        //DropDown
+
+        var dataSource = new kendo.data.DataSource({
+            data: [
+                { CityID: 1, CityName: "Lisboa" },
+                { CityID: 2, CityName: "Moscow" },
+                { CityID: 3, CityName: "Napoli" },
+                { CityID: 4, CityName: "Tokyo" },
+                { CityID: 5, CityName: "Oslo" },
+                { CityID: 6, CityName: "Pаris" },
+                { CityID: 7, CityName: "Porto" },
+                { CityID: 8, CityName: "Rome" },
+                { CityID: 9, CityName: "Berlin" },
+                { CityID: 10, CityName: "Nice" },
+                { CityID: 11, CityName: "New York" },
+                { CityID: 12, CityName: "Sao Paulo" },
+                { CityID: 13, CityName: "Rio De Janeiro" },
+                { CityID: 14, CityName: "Venice" },
+                { CityID: 15, CityName: "Los Angeles" },
+                { CityID: 16, CityName: "Madrid" },
+                { CityID: 17, CityName: "Barcelona" },
+                { CityID: 18, CityName: "Prague" },
+                { CityID: 19, CityName: "Mexico City" },
+                { CityID: 20, CityName: "Buenos Aires" }
+            ],
+            sort: { field: "CityName", dir: "asc" }
+        });
+
+        $("#kd-place-chooser").kendoDropDownList({
+            filter: "contains",
+            optionLabel: 'Please select city...',
+            dataTextField: "CityName",
+            dataValueField: "CityID",
+            dataSource: dataSource
+        });
+
+        //Text Area
+        $("#textarea").kendoTextArea({
+            rows: 4,
+            maxLength: 200,
+            placeholder: "Tell us a little bit about yourself..."
+        });
+
+        //Dropdown Tree
+        var dataSource = new kendo.data.HierarchicalDataSource({
+            sort: { field: "cityName", dir: "asc" },
+            data: [
+                {
+                    cityId: 1, cityName: "Italy", expanded: true, items: [
+                        { cityId: 2, cityName: "Napoli" },
+                        { cityId: 3, cityName: "Rome" },
+                        { cityId: 4, cityName: "Venice" }
+                    ]
+                },
+                {
+                    cityId: 5, cityName: "France", items: [
+                        { cityId: 6, cityName: "Nice" },
+                        { cityId: 7, cityName: "Paris" },
+                        { cityId: 8, cityName: "Marseille" }
+                    ]
+                },
+                {
+                    cityId: 9, cityName: "Portugal", items: [
+                        { cityId: 10, cityName: "Porto" },
+                        { cityId: 11, cityName: "Lisbon" },
+                        { cityId: 12, cityName: "Braga" }
+                    ]
+                },
+                {
+                    cityId: 13, cityName: "Brazil", items: [
+                        { cityId: 14, cityName: "Rio De Janeiro" },
+                        { cityId: 15, cityName: "Sao Paulo" }
+                    ]
+                },
+                {
+                    cityId: 16, cityName: "USA", items: [
+                        { cityId: 18, cityName: "New York" },
+                        { cityId: 19, cityName: "Atlanta" },
+                        { cityId: 20, cityName: "Los Angeles" }
+                    ]
+                }
+            ]
+        });
+
+
+        $("#kd-place-chooser").kendoDropDownTree({
+            placeholder: "Please select city or country ...",
+            height: "auto",
+            dataSource: dataSource,
+            dataValueField: "cityId",
+            dataTextField: "cityName",
+        });
+        //List View
+        var service = "https://demos.telerik.com/kendo-ui/service";
+
+        $("#treelist").kendoTreeList({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: service + "/EmployeeDirectory/All",
+                        dataType: "jsonp"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "EmployeeID",
+                        parentId: "ReportsTo",
+                        fields: {
+                            ReportsTo: { field: "ReportsTo", nullable: true },
+                            EmployeeID: { field: "EmployeeId", type: "number" },
+                            Extension: { field: "Extension", type: "number" }
+                        },
+                        expanded: true
+                    }
+                }
+            },
+            height: 540,
+            filterable: true,
+            sortable: true,
+            columns: [
+                {
+                    field: "FirstName", title: "First Name", width: 280,
+                    template: $("#photo-template").html()
+                },
+                { field: "LastName", title: "Last Name", width: 160 },
+                { field: "Position" },
+                { field: "Phone", width: 200 },
+                { field: "Extension", width: 140 },
+                { field: "Address" }
+            ],
+            pageable: {
+                pageSize: 15,
+                pageSizes: true
+            }
+        });
+        //Grid
+        var crudServiceBaseUrl = "https://demos.telerik.com/kendo-ui/service",
+            dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: crudServiceBaseUrl + "/detailproducts",
+                        dataType: "jsonp"
+                    },
+                    update: {
+                        url: crudServiceBaseUrl + "/detailproducts/Update",
+                        dataType: "jsonp"
+                    },
+                    destroy: {
+                        url: crudServiceBaseUrl + "/detailproducts/Destroy",
+                        dataType: "jsonp"
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options.models) {
+                            return { models: kendo.stringify(options.models) };
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 20,
+                autoSync: true,
+                aggregate: [{
+                    field: "TotalSales",
+                    aggregate: "sum"
+                }],
+                group: {
+                    field: "Category.CategoryName",
+                    dir: "desc",
+                    aggregates: [
+                        { field: "TotalSales", aggregate: "sum" }
+                    ]
+                },
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductID: { editable: false, nullable: true },
+                            Discontinued: { type: "boolean", editable: false },
+                            TotalSales: { type: "number", editable: false },
+                            TargetSales: { type: "number", editable: false },
+                            LastSupply: { type: "date" },
+                            UnitPrice: { type: "number" },
+                            UnitsInStock: { type: "number" },
+                            Category: {
+                                defaultValue: {
+                                    CategoryID: 8,
+                                    CategoryName: "Seafood"
+                                }
+                            },
+                            Country: {
+                                defaultValue: {
+                                    CountryNameLong: "Bulgaria",
+                                    CountryNameShort: "bg"
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+        $("#grid").kendoGrid({
+            dataSource: dataSource,
+            columnMenu: {
+                filterable: false
+            },
+            height: 680,
+            editable: "incell",
+            pageable: true,
+            sortable: true,
+            navigatable: true,
+            resizable: true,
+            reorderable: true,
+            groupable: true,
+            filterable: true,
+            dataBound: onDataBound,
+            toolbar: ["excel", "pdf", "search"],
+            columns: [{
+                selectable: true,
+                width: 75,
+                attributes: {
+                    "class": "checkbox-align",
+                },
+                headerAttributes: {
+                    "class": "checkbox-align",
+                }
+            }, {
+                field: "ProductName",
+                title: "Product Name",
+                template: "<div class='product-photo' style='background-image: url(../content/web/foods/#:data.ProductID#.jpg);'></div><div class='product-name'>#: ProductName #</div>",
+                width: 300
+            }, {
+                field: "UnitPrice",
+                title: "Price",
+                format: "{0:c}",
+                width: 105
+            }, {
+                field: "Discontinued",
+                title: "In Stock",
+                template: "<span id='badge_#=ProductID#' class='badgeTemplate'></span>",
+                width: 130,
+            }, {
+                field: "Category.CategoryName",
+                title: "Category",
+                editor: clientCategoryEditor,
+                groupHeaderTemplate: "Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', aggregates.TotalSales.sum)#",
+                width: 125
+            }, {
+                field: "CustomerRating",
+                title: "Rating",
+                template: "<input id='rating_#=ProductID#' data-bind='value: CustomerRating' class='rating'/>",
+                editable: returnFalse,
+                width: 200
+            }, {
+                field: "Country.CountryNameLong",
+                title: "Country",
+                template: "<div class='k-text-center'><img src='../content/web/country-flags/#:data.Country.CountryNameShort#.png' alt='Kendo UI for jQuery Grid #: data.Country.CountryNameLong# Flag' title='#: data.Country.CountryNameLong#' width='30' /></div>",
+                editor: clientCountryEditor,
+                width: 120
+            }, {
+                field: "UnitsInStock",
+                title: "Units",
+                width: 105
+            }, {
+                field: "TotalSales",
+                title: "Total Sales",
+                format: "{0:c}",
+                width: 140,
+                aggregates: ["sum"],
+            }, {
+                field: "TargetSales",
+                title: "Target Sales",
+                format: "{0:c}",
+                template: "<span id='chart_#= ProductID#' class='sparkline-chart'></span>",
+                width: 220
+            },
+            { command: "destroy", title: "&nbsp;", width: 120 }],
+        });
+
+        //Avatar
+
+        $('#avatar-text').kendoAvatar({
+            type: 'text',
+            text: 'JS'
+        })
+
+        $('#avatar-text-second').kendoAvatar({
+            type: 'text',
+            text: 'GP'
+        })
+
+        $('#avatar-image-first').kendoAvatar({
+            type: 'image',
+            image: "https://demos.telerik.com/kendo-ui/content/web/Customers/RICSU.jpg"
+        })
+
+        $('#avatar-image-second').kendoAvatar({
+            type: 'image',
+            image: "https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg"
+        })
+
+        $('#avatar-icon').kendoAvatar({
+            type: 'icon',
+            rounded: null,
+            icon: 'user'
+        })
+
+        //Button
+
+        $("#primaryTextButton").kendoButton({
+            themeColor: "primary"
+        });
+
+        $("#textButton").kendoButton();
+
+        $("#primaryDisabledButton").kendoButton({
+            themeColor: "primary",
+            enable: false
+        });
+
+        $("#disabledButton").kendoButton({
+            enable: false
+        });
+
+        $("#iconTextButton").kendoButton({
+            icon: "filter"
+        });
+
+        $("#kendoIconTextButton").kendoButton({
+            icon: "filter-clear"
+        });
+
+        $("#iconButton").kendoButton({
+            icon: "arrow-rotate-cw"
+        });
+
+        //calendar
+        $("#calendar").kendoCalendar();
+
+
+        
+
+        //Dialog
+
+        var dialog = $('#dialog'),
+            undo = $("#undo");
+
+
+        undo.click(function () {
+            dialog.data("kendoDialog").open();
+            undo.fadeOut();
+        });
+
+        function onClose() {
+            undo.fadeIn();
+        }
+
+        dialog.kendoDialog({
+            width: "450px",
+            title: "Software Update",
+            closable: false,
+            modal: false,
+            content: "<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>",
+            actions: [
+                { text: 'Skip this version' },
+                { text: 'Remind me later' },
+                { text: 'Install update', primary: true }
+            ],
+            close: onClose
+        });
+
+        //Pie chart
+        function createChart() {
+            $("#chart").kendoChart({
+                title: {
+                    position: "bottom",
+                    text: "Share of Internet Population Growth, 2007 - 2012"
+                },
+                legend: {
+                    visible: false
+                },
+                chartArea: {
+                    background: ""
+                },
+                seriesDefaults: {
+                    labels: {
+                        visible: true,
+                        background: "transparent",
+                        template: "#= category #: \n #= value#%"
+                    }
+                },
+                series: [{
+                    type: "pie",
+                    startAngle: 150,
+                    data: [{
+                        category: "Asia",
+                        value: 53.8,
+                        color: "#9de219"
+                    }, {
+                        category: "Europe",
+                        value: 16.1,
+                        color: "#90cc38"
+                    }, {
+                        category: "Latin America",
+                        value: 11.3,
+                        color: "#068c35"
+                    }, {
+                        category: "Africa",
+                        value: 9.6,
+                        color: "#006634"
+                    }, {
+                        category: "Middle East",
+                        value: 5.2,
+                        color: "#004d38"
+                    }, {
+                        category: "North America",
+                        value: 3.6,
+                        color: "#033939"
+                    }]
+                }],
+                tooltip: {
+                    visible: true,
+                    format: "{0}%"
+                }
+            });
+        }
+
+        $(document).ready(createChart);
+        $(document).bind("kendo:skinChange", createChart);
+
+        
+    })
+</script>
+
+
+<style>
+   
+    .contact-position {
+        margin: 0px;
+        font-size: 0.8em;
+    }
+
+    .contact-name {
+        font-size: 1.3em;
+        font-weight: normal;
+        margin: 0px;
+    }
+
+    .contact-list {
+        text-align: center;
+        padding: 4px;
+        font-size: 20px;
+    }
+
+    .user-data-container {
+        padding: 8px 14px;
+        margin-bottom: 4px;
+        box-shadow: 0 1px 2px #ccc;
+    }
+
+    .k-hbox {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .avatar-margin-right-5 {
+        margin-right: 5px;
+    }
+
+    .avatar-margin-left-10 {
+        margin-left: 10px;
+    }
+</style>

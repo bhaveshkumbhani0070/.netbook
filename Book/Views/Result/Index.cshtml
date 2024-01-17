@@ -1,0 +1,42 @@
+﻿@model List<Book.Models.ResultViewModel>
+
+@{
+    ViewData["Title"] = "Mark Sheet";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary">Mark Sheets</h2>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Student Name</th>
+                <th>Math Marks</th>
+                <th>Science Marks</th>
+                <th>English Marks</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var markSheet in Model)
+            {
+                <tr>
+                    <td>@markSheet.StudentName</td>
+                    <td>@markSheet.MathMarks</td>
+                    <td>@markSheet.ScienceMarks</td>
+                    <td>@markSheet.EnglishMarks</td>
+                    <td>@(markSheet.MathMarks + markSheet.ScienceMarks + markSheet.EnglishMarks)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@markSheet.Id" class="btn btn-info btn-sm">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

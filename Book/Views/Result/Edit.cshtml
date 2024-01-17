@@ -1,0 +1,41 @@
+﻿@model Book.Models.ResultViewModel
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-primary text-center">@((Model == null || Model.Id == 0 ? "Add Mark Sheet" : "Edit Mark Sheet"))</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="@(Model == null || Model.Id == 0 ? "Create" : "Edit")" method="post" class="needs-validation" novalidate>
+                @if (Model != null && Model.Id != 0)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+
+                <div class="form-group">
+                    <label for="StudentName">Student Name:</label>
+                    <input type="text" class="form-control" id="StudentName" name="StudentName" value="@((Model?.StudentName) ?? "")" required>
+                    <div class="invalid-feedback">Please enter the student's name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="MathMarks">Math Marks:</label>
+                    <input type="number" class="form-control" id="MathMarks" name="MathMarks" value="@((Model?.MathMarks) ?? 0)" required>
+                    <div class="invalid-feedback">Please enter valid math marks.</div>
+                </div>
+                <div class="form-group">
+                    <label for="ScienceMarks">Science Marks:</label>
+                    <input type="number" class="form-control" id="ScienceMarks" name="ScienceMarks" value="@((Model?.ScienceMarks) ?? 0)" required>
+                    <div class="invalid-feedback">Please enter valid science marks.</div>
+                </div>
+                <div class="form-group">
+                    <label for="EnglishMarks">English Marks:</label>
+                    <input type="number" class="form-control" id="EnglishMarks" name="EnglishMarks" value="@((Model?.EnglishMarks) ?? 0)" required>
+                    <div class="invalid-feedback">Please enter valid English marks.</div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center mt-3">
+                    <button type="submit" class="btn btn-primary">@((Model == null || Model.Id == 0) ? "Submit" : "Save Changes")</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
